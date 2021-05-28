@@ -12,5 +12,8 @@
     "devDependencies": {
         "@vue/test-utils": "^2.0.0-beta.3"
     },
+    "publishConfig": {
+        "registry": "http://registry.npmjs.org/"
+    },
     "gitHead": "4eb810af859902716c4e59fa6f9f26e6e5d34a31"
 }
