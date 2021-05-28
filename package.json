@@ -2,9 +2,6 @@
     "name": "vue3-framework",
     "private": true,
     "version": "1.0.1",
-    "publishConfig": {
-        "access": "public"
-    },
     "scripts": {
         "cz": "npx git-cz",
         "test": "jest",
