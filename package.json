@@ -103,7 +103,6 @@
             "path": "./node_modules/cz-conventional-changelog"
         }
     },
-
     "lint-staged": {
         "*.{js,ts,vue}": "eslint --fix"
     },
