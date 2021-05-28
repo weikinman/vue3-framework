@@ -1,0 +1,18 @@
+{
+    "name": "@vue3-framework/utils",
+    "version": "0.0.1",
+    "license": "MIT",
+    "dependencies": {
+        "element-plus": "^1.0.2-beta.44",
+        "resize-observer-polyfill": "^1.5.1",
+        "vue": "^3.0.11",
+        "vue3-framework": "^0.0.2"
+    },
+    "peerDependencies": {
+        "vue": "^3.0.3"
+    },
+    "devDependencies": {
+        "@vue/test-utils": "^2.0.0-beta.3"
+    },
+    "gitHead": "fd0406104d6ec2d3cc14053d504562185c6f2cd5"
+}
