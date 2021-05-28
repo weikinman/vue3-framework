@@ -13,13 +13,10 @@
     "bugs": {
         "url": "https://github.com/vue3-framework/vue3-framework/issues"
     },
-    "publishConfig": {
-        "registry": "http://registry.npmjs.org/"
-    },
     "dependencies": {
         "@vue3-framework/utils": "^0.0.6",
         "element-plus": "^1.0.2-beta.44",
         "vue": "^3.0.11"
     },
-    "gitHead": "747e9ef919d6ac23b26bcc605f8439193216d7d6"
+    "gitHead": "4d25deb52ae9ae5fe685fd656a713416eace150c"
 }
