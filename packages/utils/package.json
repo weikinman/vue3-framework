@@ -1,6 +1,6 @@
 {
     "name": "@vue3-framework/utils",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "license": "MIT",
     "dependencies": {
         "resize-observer-polyfill": "^1.5.1",
