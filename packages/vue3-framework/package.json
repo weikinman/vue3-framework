@@ -14,9 +14,8 @@
         "url": "https://github.com/vue3-framework/vue3-framework/issues"
     },
     "dependencies": {
-        "@vue3-framework/utils": "^0.0.7",
         "element-plus": "^1.0.2-beta.44",
         "vue": "^3.0.11"
     },
-    "gitHead": "4d25deb52ae9ae5fe685fd656a713416eace150c"
+    "gitHead": "7793a985f54b8b72fcf463b1ff90b4f75c92d38b"
 }
