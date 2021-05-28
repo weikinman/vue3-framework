@@ -1,6 +1,6 @@
 {
     "name": "@vue3-framework/http",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "> TODO: description",
     "author": "scott <scott@boardware.com>",
     "homepage": "https://vue3-framework.org/packages/http",
@@ -24,5 +24,4 @@
         "vue": "^3.0.11"
     },
     "gitHead": "fd0406104d6ec2d3cc14053d504562185c6f2cd5"
-
 }
