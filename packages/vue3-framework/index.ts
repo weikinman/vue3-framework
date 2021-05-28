@@ -8,7 +8,7 @@ import type { InstallOptions } from '@vue3-framework/utils/config'
 
 const version = version_ // version_ to fix tsc issue
 
-console.log(version+'22fff23fffff3');
+console.log(version+'22fff2ff3fffff3');
 const defaultInstallOpt: InstallOptions =  {
   size: '' as ComponentSize,
   zIndex: 2000,
