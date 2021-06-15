@@ -17,14 +17,14 @@ module.exports = {
     '@vue/babel-plugin-jsx',
     '@babel/proposal-class-properties',
     '@babel/transform-runtime',
-    'lodash',
+    'lodash', ['@babel/plugin-proposal-private-methods', { 'loose': false }],
   ],
   overrides: [{
     test: /\.vue$/,
     plugins: [
       '@babel/transform-typescript',
     ],
-  } ],
+  }],
   env: {
     utils: {
       ignore: [
@@ -50,6 +50,7 @@ module.exports = {
             },
           },
         ],
+
       ],
     },
   },

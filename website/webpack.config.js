@@ -13,9 +13,8 @@ const isPlay = !!process.env.PLAY_ENV
 const config = {
   mode: isProd ? 'production' : 'development',
   devtool: !isProd && 'cheap-module-eval-source-map',
-  entry: isPlay
-    ? path.resolve(__dirname, './play.js')
-    : path.resolve(__dirname, './entry.js'),
+  entry: isPlay ?
+    path.resolve(__dirname, './play.js') : path.resolve(__dirname, './entry.js'),
   output: {
     path: path.resolve(__dirname, '../website-dist'),
     publicPath: '/',
@@ -23,41 +22,39 @@ const config = {
   },
   stats: 'verbose',
   module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        use: 'vue-loader',
-      },
-      {
-        test: /\.(ts|js)x?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.md$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: {
-              compilerOptions: {
-                preserveWhitespace: false,
-              },
-            },
+    rules: [{
+      test: /\.vue$/,
+      use: 'vue-loader',
+    },
+    {
+      test: /\.(ts|js)x?$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+    },
+    {
+      test: /\.md$/,
+      use: [{
+        loader: 'vue-loader',
+        options: {
+          compilerOptions: {
+            preserveWhitespace: false,
           },
-          {
-            loader: path.resolve(__dirname, './md-loader/index.js'),
-          },
-        ],
-      },
-      {
-        test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
-        loader: 'url-loader',
-        // todo: 这种写法有待调整
-        query: {
-          limit: 10000,
-          name: path.posix.join('static', '[name].[hash:7].[ext]'),
         },
       },
+      {
+        loader: path.resolve(__dirname, './md-loader/index.js'),
+      },
+      ],
+    },
+    {
+      test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
+      loader: 'url-loader',
+      // todo: 这种写法有待调整
+      query: {
+        limit: 10000,
+        name: path.posix.join('static', '[name].[hash:7].[ext]'),
+      },
+    },
     ],
   },
   resolve: {
@@ -83,6 +80,20 @@ const config = {
     publicPath: '/',
     contentBase: __dirname,
     overlay: true,
+    proxy: {
+      '/api': {
+        target: 'http://172.19.201.201:9203',
+        pathRewrite: { '^/api': '/index.html' },
+        changeOrigin: true, // target是域名的话，需要这个参数，
+        secure: false, // 设置支持https协议的代理
+        bypass: function(req, res, proxyOptions) {
+          if (req.headers.accept.indexOf('html') !== -1) {
+            console.log('Skipping proxy for browser request.')
+            return '/index.html'
+          }
+        },
+      },
+    },
   },
   optimization: {
     minimize: true,

@@ -1,43 +1,43 @@
 <template>
   <div id="app" :class="{ 'is-component': isComponent }">
-    <main-header v-if="lang !== 'play'" />
     <div class="main-cnt">
       <router-view />
     </div>
-    <main-footer v-if="lang !== 'play' && !isComponent" />
   </div>
 </template>
 
 <script>
-import { use } from '@element-plus/locale'
-import zhLocale from '@element-plus/locale/lang/zh-cn'
-import enLocale from '@element-plus/locale/lang/en'
-import esLocale from '@element-plus/locale/lang/es'
-import frLocale from '@element-plus/locale/lang/fr'
-import jaLocale from '@element-plus/locale/lang/ja'
+// import { use } from '@element-plus/locale'
+// import zhLocale from '@element-plus/locale/lang/zh-cn'
+// import enLocale from '@element-plus/locale/lang/en'
+// import esLocale from '@element-plus/locale/lang/es'
+// import frLocale from '@element-plus/locale/lang/fr'
+// import jaLocale from '@element-plus/locale/lang/ja'
 import { Language } from './enums/language'
 
-const lang = location.hash.replace('#', '').split('/')[1] || Language.CN
-const localize = lang => {
-  switch (lang) {
-    case Language.CN:
-      use(zhLocale)
-      break
-    case Language.ES:
-      use(esLocale)
-      break
-    case Language.FR:
-      use(frLocale)
-      break
-    case Language.JP:
-      use(jaLocale)
-      break
-    default:
-      use(enLocale)
-  }
-}
-localize(lang)
+// const lang = location.hash.replace('#', '').split('/')[1] || Language.CN
+// const localize = lang => {
+//   switch (lang) {
+//     case Language.CN:
+//       use(zhLocale)
+//       break
+//     case Language.ES:
+//       use(esLocale)
+//       break
+//     case Language.FR:
+//       use(frLocale)
+//       break
+//     case Language.JP:
+//       use(jaLocale)
+//       break
+//     default:
+//       use(enLocale)
+//   }
+// }
+// localize(lang)
+import AxiosService from '../packages/http/lib/http'
 
+console.log(AxiosService)
 export default {
   name: 'App',
 
@@ -55,12 +55,12 @@ export default {
       if (val === Language.CN) {
         this.suggestJump()
       }
-      localize(val)
+      // localize(val)
     },
   },
 
   mounted() {
-    localize(this.lang)
+    //localize(this.lang)
     if (this.lang === Language.CN) {
       this.suggestJump()
     }

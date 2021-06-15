@@ -63,6 +63,7 @@
         "file-save": "^0.2.0",
         "highlight.js": "^10.1.2",
         "html-webpack-plugin": "^4.3.0",
+        "http-proxy-middleware": "^0.19.1",
         "husky": "^4.2.5",
         "import-from": "^3.0.0",
         "jest": "^26.4.2",
@@ -101,6 +102,12 @@
     "config": {
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
     },
     "lint-staged": {

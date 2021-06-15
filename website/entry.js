@@ -18,7 +18,16 @@ dayjs.locale('zh-cn') // todo: locale based on Doc site lang
 
 import App from './app.vue'
 import ElementPlus from 'element-plus'
-import '../packages/theme-chalk/src/index.scss'
+
+import AxiosService from '../packages/http/lib/http'
+
+AxiosService.name = '33333333333333'
+console.log(AxiosService)
+
+AxiosService.fetch('/api', {}).then(res => {
+  console.log('fetch', res)
+})
+//import '../packages/theme-chalk/src/index.scss'
 
 const app = createApp(App)
 
