@@ -1,0 +1,19 @@
+{
+    "name": "@vue3-framework/utils",
+    "version": "0.0.8",
+    "license": "MIT",
+    "dependencies": {
+        "resize-observer-polyfill": "^1.5.1",
+        "vue": "^3.0.11"
+    },
+    "peerDependencies": {
+        "vue": "^3.0.3"
+    },
+    "devDependencies": {
+        "@vue/test-utils": "^2.0.0-beta.3"
+    },
+    "publishConfig": {
+        "registry": "http://registry.npmjs.org/"
+    },
+    "gitHead": "7793a985f54b8b72fcf463b1ff90b4f75c92d38b"
+}
