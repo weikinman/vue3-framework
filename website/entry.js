@@ -19,15 +19,15 @@ dayjs.locale('zh-cn') // todo: locale based on Doc site lang
 import App from './app.vue'
 import ElementPlus from 'element-plus'
 
-import AxiosService from '../packages/http/lib/http'
+import AxiosService from '../packages/http/lib'
 
 AxiosService.name = '33333333333333'
 console.log(AxiosService)
 
 AxiosService.fetch('/api', {}).then(res => {
-  console.log('fetch', res)
-})
-//import '../packages/theme-chalk/src/index.scss'
+        console.log('fetch', res)
+    })
+    //import '../packages/theme-chalk/src/index.scss'
 
 const app = createApp(App)
 
@@ -40,25 +40,25 @@ app.component('SideNav', SideNav)
 app.component('FooterNav', FooterNav)
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
+    history: createWebHashHistory(),
+    routes,
 })
 app.use(ElementPlus)
 app.use(router)
 router.isReady().then(() => {
 
-  router.afterEach(async route => {
-    await nextTick()
-    const data = title[route.meta.lang]
-    for (let val in data) {
-      if (new RegExp('^' + val, 'g').test(route.name)) {
-        document.title = data[val]
-        return
-      }
-    }
-    document.title = 'Element'
-    ga('send', 'event', 'PageView', route.name)
-  })
+    router.afterEach(async route => {
+        await nextTick()
+        const data = title[route.meta.lang]
+        for (let val in data) {
+            if (new RegExp('^' + val, 'g').test(route.name)) {
+                document.title = data[val]
+                return
+            }
+        }
+        document.title = 'Element'
+        ga('send', 'event', 'PageView', route.name)
+    })
 
 })
 

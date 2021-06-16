@@ -1,6 +1,6 @@
-import AxiosService from '../packages/http/lib/http'
+import AxiosService from '../packages/http/lib'
 
 
 AxiosService.fetch('/api', {}).then(res => {
-  console.log('fetch', res)
+    console.log('fetch', res)
 })
