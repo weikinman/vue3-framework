@@ -35,7 +35,7 @@ import { Language } from './enums/language'
 //   }
 // }
 // localize(lang)
-import AxiosService from '../packages/http/lib/http'
+import AxiosService from '../packages/http/lib'
 
 console.log(AxiosService)
 export default {
