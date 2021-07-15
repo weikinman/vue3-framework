@@ -21,6 +21,42 @@ import ElementPlus from 'element-plus'
 
 import AxiosService from '../packages/http/lib'
 
+import vue3fw from '@vue3-framework/http/lib/index';
+
+import axios from 'axios';
+
+// Request API.
+// Add your own code here to customize or restrict how the public can register new users.
+axios
+  .post('http://localhost:1337/auth/local', {
+   // username: 'test 123',
+    identifier: 'test@123.com',
+    password: 'test123',
+  })
+  .then(response => {
+    // Handle success.
+    console.log('Well done!');
+    console.log('User profile', response.data.user);
+    console.log('User token', response.data.jwt);
+
+        axios
+        .get('http://localhost:1337/Regulars', {
+            headers: {
+                Authorization: `Bearer ${response.data.jwt}`,
+              },
+        })
+        .then(res => {
+            // Handle success.
+            console.log('Well done!',res);
+        });
+  })
+  .catch(error => {
+    // Handle error.
+    console.log('An error occurred:', error.response);
+  });
+
+console.log(vue3fw);
+
 AxiosService.name = '33333333333333'
 console.log(AxiosService)
 

@@ -3,6 +3,7 @@
     "version": "0.0.9",
     "license": "MIT",
     "dependencies": {
+        "breadcrumb": "^1.0.0",
         "resize-observer-polyfill": "^1.5.1",
         "vue": "^3.0.11"
     },
